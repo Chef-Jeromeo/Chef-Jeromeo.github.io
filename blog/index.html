@@ -1,0 +1,36 @@
+---
+layout: default
+title: Jerome's Blog
+permalink: /blog/
+---
+<section class="hero panel">
+  <p class="eyebrow">Jerome's Blog</p>
+  <h1>Field notes on AI transformation.</h1>
+  <p class="tagline">
+    Practical writing on enterprise AI adoption, field CTO advisory, governance, cloud modernization, and turning strategy into operating reality.
+  </p>
+</section>
+
+<section class="section panel">
+  <p class="eyebrow">Latest posts</p>
+  {% if site.posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li class="post-card">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+          {% if post.excerpt %}
+            <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="post-card">
+      <h2>Posts coming soon.</h2>
+      <p>
+        This blog is ready for Jekyll posts. Add Markdown files to the <code>_posts</code> folder using the format <code>YYYY-MM-DD-title.md</code>.
+      </p>
+    </div>
+  {% endif %}
+</section>
