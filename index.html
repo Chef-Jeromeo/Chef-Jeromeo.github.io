@@ -15,10 +15,10 @@
   <style>
     :root {
       color-scheme: light;
-      --cp-bg: #f7f4ef;
-      --cp-bg-elevated: #fcfbf8;
+      --cp-bg: #2f2b29;
+      --cp-bg-elevated: #3a3431;
       --cp-surface: #ffffff;
-      --cp-surface-soft: #f5f5f5;
+      --cp-surface-soft: #f1eee9;
       --cp-border: #dedede;
       --cp-border-strong: #919191;
       --cp-text: #242424;
@@ -38,11 +38,13 @@
       --cp-panel-strong: rgba(255, 255, 255, 0.96);
       --cp-sheen: rgba(255, 255, 255, 0.55);
       --cp-highlight: rgba(177, 31, 75, 0.12);
+      --cp-pattern-line: rgba(255, 255, 255, 0.08);
+      --cp-pattern-node: rgba(245, 158, 11, 0.16);
     }
     html[data-theme="dark"] {
       color-scheme: dark;
-      --cp-bg: #3d3b3a;
-      --cp-bg-elevated: #343231;
+      --cp-bg: #151413;
+      --cp-bg-elevated: #242120;
       --cp-surface: #292929;
       --cp-surface-soft: #2e2e2e;
       --cp-border: #474747;
@@ -64,6 +66,8 @@
       --cp-panel-strong: rgba(41, 41, 41, 0.96);
       --cp-sheen: rgba(255, 255, 255, 0.04);
       --cp-highlight: rgba(253, 142, 161, 0.12);
+      --cp-pattern-line: rgba(255, 255, 255, 0.07);
+      --cp-pattern-node: rgba(253, 142, 161, 0.14);
     }
 
     * {
@@ -81,10 +85,12 @@
     body {
       margin: 0;
       background:
-        linear-gradient(90deg, var(--cp-border), transparent 1px),
-        linear-gradient(180deg, var(--cp-border), transparent 1px),
-        linear-gradient(135deg, var(--cp-surface-soft), var(--cp-bg));
-      background-size: 72px 72px, 72px 72px, auto;
+        radial-gradient(circle at 18% 16%, var(--cp-pattern-node), transparent 28%),
+        radial-gradient(circle at 82% 12%, rgba(0, 120, 212, 0.12), transparent 30%),
+        linear-gradient(30deg, transparent 24%, var(--cp-pattern-line) 25%, var(--cp-pattern-line) 26%, transparent 27%, transparent 74%, var(--cp-pattern-line) 75%, var(--cp-pattern-line) 76%, transparent 77%),
+        linear-gradient(150deg, transparent 24%, var(--cp-pattern-line) 25%, var(--cp-pattern-line) 26%, transparent 27%, transparent 74%, var(--cp-pattern-line) 75%, var(--cp-pattern-line) 76%, transparent 77%),
+        linear-gradient(135deg, var(--cp-bg-elevated), var(--cp-bg) 48%, #1f1d1c);
+      background-size: auto, auto, 96px 96px, 96px 96px, auto;
       color: var(--cp-text);
       font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.55;
