@@ -78,10 +78,6 @@
       scroll-behavior: smooth;
     }
 
-    html[data-tone="mono"] {
-      filter: grayscale(1) contrast(1.08);
-    }
-
     body {
       margin: 0;
       background:
@@ -345,6 +341,98 @@
       transform: rotate(45deg);
     }
 
+    html[data-mode="reader"] body {
+      background: #f7f7f4;
+      color: #1f2933;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    html[data-mode="reader"] .page {
+      width: min(860px, calc(100% - 32px));
+    }
+
+    html[data-mode="reader"] .hero {
+      display: block;
+      min-height: 0;
+    }
+
+    html[data-mode="reader"] .panel,
+    html[data-mode="reader"] .card,
+    html[data-mode="reader"] details,
+    html[data-mode="reader"] .quick-facts li,
+    html[data-mode="reader"] .pill,
+    html[data-mode="reader"] .video-placeholder {
+      background: #ffffff;
+      border-color: #d7d2ca;
+      border-radius: 6px;
+      box-shadow: none;
+    }
+
+    html[data-mode="reader"] .intro,
+    html[data-mode="reader"] .section,
+    html[data-mode="reader"] .side-card,
+    html[data-mode="reader"] .footer {
+      padding: 24px;
+    }
+
+    html[data-mode="reader"] .intro::before,
+    html[data-mode="reader"] .headshot::before,
+    html[data-mode="reader"] .video-placeholder::before {
+      display: none;
+    }
+
+    html[data-mode="reader"] .headshot {
+      min-height: 280px;
+      background: #ffffff;
+    }
+
+    html[data-mode="reader"] .nav {
+      background: transparent;
+      border-width: 0 0 1px;
+      border-radius: 0;
+      padding: 0 0 12px;
+    }
+
+    html[data-mode="reader"] .nav a,
+    html[data-mode="reader"] .tone-toggle,
+    html[data-mode="reader"] .button {
+      background: transparent;
+      border-color: #d7d2ca;
+      color: #1f2933;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    html[data-mode="reader"] h1,
+    html[data-mode="reader"] h2,
+    html[data-mode="reader"] h3,
+    html[data-mode="reader"] summary {
+      font-family: Georgia, "Times New Roman", serif;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    html[data-mode="reader"] h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1;
+    }
+
+    html[data-mode="reader"] .profile-copy,
+    html[data-mode="reader"] .cards {
+      grid-template-columns: 1fr;
+    }
+
+    html[data-mode="reader"] .card,
+    html[data-mode="reader"] .post-card {
+      border-top-width: 0;
+      border-left: 4px solid #d97706;
+    }
+
+    html[data-mode="reader"] .pill {
+      font-weight: 600;
+    }
+
     .section {
       margin-top: 24px;
       padding: 28px;
@@ -587,7 +675,7 @@
       <a href="#technology">Technology</a>
       <a href="#interview">Interview</a>
       <a href="/blog/">Short Blogs</a>
-      <button class="tone-toggle" type="button" id="toneToggle" aria-pressed="false">B/W Mode</button>
+      <button class="tone-toggle" type="button" id="modeToggle" aria-pressed="false">Reader Mode</button>
     </nav>
 
     <section class="section panel" id="profile">
@@ -762,18 +850,18 @@
   </main>
   <script>
     (() => {
-      const button = document.getElementById("toneToggle");
+      const button = document.getElementById("modeToggle");
       if (!button) return;
 
-      const setTone = (isMono) => {
-        document.documentElement.setAttribute("data-tone", isMono ? "mono" : "graphite");
-        button.setAttribute("aria-pressed", String(isMono));
-        button.textContent = isMono ? "Graphite Mode" : "B/W Mode";
+      const setMode = (isReader) => {
+        document.documentElement.setAttribute("data-mode", isReader ? "reader" : "short");
+        button.setAttribute("aria-pressed", String(isReader));
+        button.textContent = isReader ? "Short Mode" : "Reader Mode";
       };
 
-      setTone(false);
+      setMode(false);
       button.addEventListener("click", () => {
-        setTone(document.documentElement.getAttribute("data-tone") !== "mono");
+        setMode(document.documentElement.getAttribute("data-mode") !== "reader");
       });
     })();
   </script>

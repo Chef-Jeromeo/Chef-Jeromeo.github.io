@@ -172,6 +172,88 @@
       text-decoration: none;
     }
 
+    .tone-toggle {
+      flex: 0 0 auto;
+      margin-left: auto;
+      padding: 10px 14px;
+      border: 1px solid var(--cp-border-strong);
+      border-radius: 999px;
+      background: var(--cp-surface);
+      color: var(--cp-text);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+    }
+
+    .tone-toggle::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+      background: var(--cp-warning);
+      transform: rotate(45deg);
+    }
+
+    html[data-mode="reader"] body {
+      background: #f7f7f4;
+      color: #1f2933;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    html[data-mode="reader"] .page {
+      width: min(860px, calc(100% - 32px));
+    }
+
+    html[data-mode="reader"] .panel,
+    html[data-mode="reader"] .post-card {
+      background: #ffffff;
+      border-color: #d7d2ca;
+      border-radius: 6px;
+      box-shadow: none;
+    }
+
+    html[data-mode="reader"] .hero::before {
+      display: none;
+    }
+
+    html[data-mode="reader"] .hero,
+    html[data-mode="reader"] .section,
+    html[data-mode="reader"] .footer {
+      padding: 24px;
+    }
+
+    html[data-mode="reader"] .nav {
+      border-bottom: 1px solid #d7d2ca;
+      gap: 12px;
+      padding-bottom: 12px;
+    }
+
+    html[data-mode="reader"] .nav a,
+    html[data-mode="reader"] .tone-toggle {
+      background: transparent;
+      border-color: #d7d2ca;
+      color: #1f2933;
+    }
+
+    html[data-mode="reader"] h1,
+    html[data-mode="reader"] h2,
+    html[data-mode="reader"] h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    html[data-mode="reader"] h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1;
+    }
+
+    html[data-mode="reader"] .post-card {
+      border-left: 4px solid #d97706;
+    }
+
     .section {
       padding: 32px;
       margin-top: 18px;
@@ -238,11 +320,29 @@
     <nav class="nav" aria-label="Site navigation">
       <a href="/">Home</a>
       <a href="/blog/">Short Blogs</a>
+      <button class="tone-toggle" type="button" id="modeToggle" aria-pressed="false">Reader Mode</button>
     </nav>
     {{ content }}
     <footer class="footer panel">
       Jerome Short | AI Transformation | Field CTO Advisory | Cloud Modernization
     </footer>
   </main>
+  <script>
+    (() => {
+      const button = document.getElementById("modeToggle");
+      if (!button) return;
+
+      const setMode = (isReader) => {
+        document.documentElement.setAttribute("data-mode", isReader ? "reader" : "short");
+        button.setAttribute("aria-pressed", String(isReader));
+        button.textContent = isReader ? "Short Mode" : "Reader Mode";
+      };
+
+      setMode(false);
+      button.addEventListener("click", () => {
+        setMode(document.documentElement.getAttribute("data-mode") !== "reader");
+      });
+    })();
+  </script>
 </body>
 </html>
