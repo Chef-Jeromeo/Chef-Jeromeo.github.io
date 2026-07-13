@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Why legal agents in Word matter"
+---
+One of the most interesting areas of Microsoft 365 Copilot innovation is the movement toward agent experiences that show up directly inside the tools professionals already use every day. For lawyers, Word is not just another productivity application; it is where drafting, reviewing, negotiating, summarizing, and refining legal work often happens. A legal-oriented agent experience in Word has the potential to change how attorneys engage with Microsoft technology because it brings AI assistance into the document workflow instead of asking lawyers to leave that workflow and move into a separate tool.
+
+I have seen this dynamic first hand: when AI capabilities are embedded where work already happens, adoption feels less like a new platform rollout and more like an improvement to the way people already operate. For law firms, that matters. Copilot adoption can become a wall-to-wall consideration not only because of chat or meeting summaries, but because specialized experiences can begin to address real practice workflows across drafting, review, research preparation, knowledge reuse, matter context, and collaboration.
+
+This is also why law firms should think carefully about where Microsoft-native AI can fit alongside third-party legal AI tools. Products like Harvey may be valuable for specialized legal use cases, but many professionals across a large firm may not need a full third-party AI license if Microsoft continues releasing practical innovations for legal and other regulated industries inside the Microsoft 365 experience. The strategic question is not whether every legal AI use case belongs in one platform. It is how much of the firm's broad, everyday AI demand can be covered securely and economically through Copilot, while reserving specialized tools for the narrower scenarios where they create distinct value.
