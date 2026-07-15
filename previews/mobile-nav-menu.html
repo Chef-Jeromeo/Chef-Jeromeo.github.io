@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Menu Button Nav</title>
+  <link rel="stylesheet" href="/previews/nav-preview.css">
+  <style>
+    .nav-shell { margin: 18px 0; }
+    .nav { display: flex; flex-wrap: wrap; gap: 10px; }
+    .mobile-menu-button { display: none; width: 100%; }
+    @media (max-width: 700px) {
+      .mobile-menu-button { display: flex; }
+      .nav { display: none; margin-top: 10px; }
+      .nav.open { display: grid; grid-template-columns: 1fr; }
+      .nav a { width: 100%; justify-content: flex-start; border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="nav-shell">
+      <button class="mobile-menu-button" type="button" id="menuButton" aria-expanded="false">Menu</button>
+      <nav class="nav" id="navMenu" aria-label="Preview navigation">
+        <a href="#profile">Profile</a><a href="#strengths">Strengths</a><a href="#experience">Experience</a><a href="#recognition">Recognition</a><a href="#technology">Technology</a><a href="#interview">Interview</a><a href="/blog/">Short Blogs</a>
+      </nav>
+    </div>
+    <p class="preview-note"><strong>Menu Button:</strong> the most polished mobile option. Full nav on desktop; a single expandable menu on phones.</p>
+    <section class="hero" id="profile"><div class="intro panel"><div><p class="eyebrow">AI transformation & field CTO advisory</p><h1>Jerome Short</h1><p class="tagline">Enterprise AI transformation leader helping organizations move from experimentation to scaled adoption.</p></div><div class="cta-row"><a class="button" href="#interview">Interview video</a></div></div><aside class="side-card panel"><div class="headshot"><img src="/assets/jerome-short-headshot-greyscale.jpg" alt="Jerome Short"></div><ul class="quick-facts"><li><strong>Mobile behavior</strong> Cleaner top of page, one tap to reveal links.</li></ul></aside></section>
+    <section class="section panel" id="strengths"><p class="eyebrow">Strengths</p><div class="cards"><article class="card"><h3>Strategy</h3><p>AI operating models and transformation roadmaps.</p></article><article class="card"><h3>Governance</h3><p>Responsible AI, security, identity, and risk.</p></article><article class="card"><h3>Adoption</h3><p>Executive alignment and measurable value.</p></article></div></section>
+    <section class="section panel" id="experience"><h2>Experience</h2><p>Preview content block.</p></section>
+    <section class="section panel" id="recognition"><h2>Recognition</h2><p>Preview content block.</p></section>
+    <section class="section panel" id="technology"><h2>Technology</h2><p>Preview content block.</p></section>
+    <section class="section panel" id="interview"><h2>Interview</h2><p>Preview content block.</p></section>
+  </main>
+  <script>
+    const button = document.getElementById("menuButton");
+    const menu = document.getElementById("navMenu");
+    button.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      button.setAttribute("aria-expanded", String(open));
+      button.textContent = open ? "Close menu" : "Menu";
+    });
+  </script>
+</body>
+</html>

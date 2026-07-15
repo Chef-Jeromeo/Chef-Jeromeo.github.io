@@ -24,6 +24,15 @@ permalink: /changelog/
 
   <h2>2026-07-15</h2>
 
+  <h3>Created hidden mobile navigation preview lab</h3>
+  <p><strong>Source:</strong> Microsoft Teams relay</p>
+  <p><strong>Exact request:</strong></p>
+  <blockquote>
+    Please do so
+  </blockquote>
+  <p><strong>Context:</strong> This followed the recommendation to create a non-production preview area for mobile navigation options before changing the homepage.</p>
+  <p><strong>Change:</strong> Added a hidden <code>/previews/</code> area with four mobile navigation concepts: Wrap Nav, Menu Button, Stacked Nav, and Bottom Nav. These pages are not linked from production navigation and are intended for phone testing.</p>
+
   <h3>Created this hidden changelog page</h3>
   <p><strong>Source:</strong> Microsoft Teams relay</p>
   <p><strong>Exact request:</strong></p>

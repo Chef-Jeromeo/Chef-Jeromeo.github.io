@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Bottom Nav</title>
+  <link rel="stylesheet" href="/previews/nav-preview.css">
+  <style>
+    .nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+    .bottom-nav { display: none; }
+    @media (max-width: 700px) {
+      .page { padding-bottom: 112px; }
+      .nav a:nth-child(n+4) { display: none; }
+      .bottom-nav {
+        position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 20;
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+        padding: 8px; border: 1px solid var(--border); border-radius: 18px;
+        background: rgba(255,255,255,.96); box-shadow: 0 0 2px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.14);
+      }
+      .bottom-nav a {
+        min-height: 44px; display: grid; place-items: center; border-radius: 12px;
+        color: var(--text); font-size: .78rem; font-weight: 800; text-transform: uppercase;
+      }
+      .bottom-nav a:hover { background: var(--soft); text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Preview navigation">
+      <a href="#profile">Profile</a><a href="#strengths">Strengths</a><a href="#experience">Experience</a><a href="#recognition">Recognition</a><a href="#technology">Technology</a><a href="#interview">Interview</a><a href="/blog/">Short Blogs</a>
+    </nav>
+    <p class="preview-note"><strong>Bottom Nav:</strong> app-like mobile navigation for the most important destinations, with secondary links still available near the top.</p>
+    <section class="hero" id="profile"><div class="intro panel"><div><p class="eyebrow">AI transformation & field CTO advisory</p><h1>Jerome Short</h1><p class="tagline">Enterprise AI transformation leader helping organizations move from experimentation to scaled adoption.</p></div><div class="cta-row"><a class="button" href="#interview">Interview video</a></div></div><aside class="side-card panel"><div class="headshot"><img src="/assets/jerome-short-headshot-greyscale.jpg" alt="Jerome Short"></div><ul class="quick-facts"><li><strong>Mobile behavior</strong> Persistent access to primary links, but less room for all sections.</li></ul></aside></section>
+    <section class="section panel" id="strengths"><p class="eyebrow">Strengths</p><div class="cards"><article class="card"><h3>Strategy</h3><p>AI operating models and transformation roadmaps.</p></article><article class="card"><h3>Governance</h3><p>Responsible AI, security, identity, and risk.</p></article><article class="card"><h3>Adoption</h3><p>Executive alignment and measurable value.</p></article></div></section>
+    <section class="section panel" id="experience"><h2>Experience</h2><p>Preview content block.</p></section>
+    <section class="section panel" id="recognition"><h2>Recognition</h2><p>Preview content block.</p></section>
+    <section class="section panel" id="technology"><h2>Technology</h2><p>Preview content block.</p></section>
+    <section class="section panel" id="interview"><h2>Interview</h2><p>Preview content block.</p></section>
+  </main>
+  <nav class="bottom-nav" aria-label="Mobile bottom navigation">
+    <a href="#profile">Profile</a><a href="#strengths">Strengths</a><a href="#experience">Experience</a><a href="/blog/">Blog</a>
+  </nav>
+</body>
+</html>
