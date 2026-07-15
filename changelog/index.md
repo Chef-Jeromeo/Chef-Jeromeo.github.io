@@ -24,6 +24,14 @@ permalink: /changelog/
 
   <h2>2026-07-15</h2>
 
+  <h3>Applied mobile Menu Button navigation and archived prior homepage</h3>
+  <p><strong>Source:</strong> Microsoft Teams relay</p>
+  <p><strong>Exact request:</strong></p>
+  <blockquote>
+    I like the Menu Button please update the site with this navigation when viewing from a mobile device. I’d also like to save a copy of how it looks before the change into a subfolder called deprecated with its own hidden navigation so I can go back and review any changes I ask you to save in deprecated
+  </blockquote>
+  <p><strong>Change:</strong> Applied the Menu Button mobile navigation pattern to the live homepage and shared blog layout. Added a hidden <code>/deprecated/</code> archive with a snapshot of the homepage before the mobile navigation change.</p>
+
   <h3>Created hidden mobile navigation preview lab</h3>
   <p><strong>Source:</strong> Microsoft Teams relay</p>
   <p><strong>Exact request:</strong></p>

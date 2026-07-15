@@ -288,35 +288,6 @@
       align-items: center;
     }
 
-    .nav-shell {
-      position: sticky;
-      top: 0;
-      z-index: 4;
-      margin: 16px 0 24px;
-    }
-
-    .nav-shell .nav {
-      position: static;
-      margin: 0;
-    }
-
-    .mobile-menu-button {
-      display: none;
-      width: 100%;
-      min-height: 44px;
-      padding: 8px 12px;
-      border: 1px solid var(--cp-border-strong);
-      border-radius: 0.625rem;
-      background: var(--cp-surface);
-      color: var(--cp-text);
-      cursor: pointer;
-      font: inherit;
-      font-size: 0.95rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
     .nav a {
       flex: 0 0 auto;
       padding: 8px 12px;
@@ -635,45 +606,6 @@
       }
     }
 
-    @media (max-width: 700px) {
-      .mobile-menu-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .nav-shell {
-        padding: 10px;
-        border: 1px solid var(--cp-border-strong);
-        border-radius: 16px;
-        background: var(--cp-overlay);
-        backdrop-filter: blur(10px);
-      }
-
-      .nav-shell .nav {
-        display: none;
-        margin-top: 10px;
-        padding: 0;
-        overflow-x: visible;
-        background: transparent;
-        border: 0;
-        border-radius: 0;
-        backdrop-filter: none;
-      }
-
-      .nav-shell .nav.open {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .nav-shell .nav a,
-      .nav-shell .tone-toggle {
-        width: 100%;
-        justify-content: flex-start;
-        margin-left: 0;
-      }
-    }
-
     @media print {
       .nav,
       .video-placeholder,
@@ -724,19 +656,16 @@
       </aside>
     </section>
 
-    <div class="nav-shell">
-      <button class="mobile-menu-button" type="button" id="menuButton" aria-expanded="false" aria-controls="pageNav">Menu</button>
-      <nav class="nav" id="pageNav" aria-label="Page sections">
-        <a href="#profile">Profile</a>
-        <a href="#strengths">Strengths</a>
-        <a href="#experience">Experience</a>
-        <a href="#recognition">Recognition</a>
-        <a href="#technology">Technology</a>
-        <a href="#interview">Interview</a>
-        <a href="/blog/">Short Blogs</a>
-        <button class="tone-toggle" type="button" id="modeToggle" aria-pressed="false">Reader Mode</button>
-      </nav>
-    </div>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#profile">Profile</a>
+      <a href="#strengths">Strengths</a>
+      <a href="#experience">Experience</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#technology">Technology</a>
+      <a href="#interview">Interview</a>
+      <a href="/blog/">Short Blogs</a>
+      <button class="tone-toggle" type="button" id="modeToggle" aria-pressed="false">Reader Mode</button>
+    </nav>
 
     <section class="section panel" id="profile">
       <p class="eyebrow">Executive profile</p>
@@ -922,28 +851,6 @@
       setMode(false);
       button.addEventListener("click", () => {
         setMode(document.documentElement.getAttribute("data-mode") !== "reader");
-      });
-    })();
-
-    (() => {
-      const button = document.getElementById("menuButton");
-      const menu = document.getElementById("pageNav");
-      if (!button || !menu) return;
-
-      button.addEventListener("click", () => {
-        const isOpen = menu.classList.toggle("open");
-        button.setAttribute("aria-expanded", String(isOpen));
-        button.textContent = isOpen ? "Close menu" : "Menu";
-      });
-
-      menu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          if (window.matchMedia("(max-width: 700px)").matches) {
-            menu.classList.remove("open");
-            button.setAttribute("aria-expanded", "false");
-            button.textContent = "Menu";
-          }
-        });
       });
     })();
   </script>

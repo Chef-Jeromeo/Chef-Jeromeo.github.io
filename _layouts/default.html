@@ -158,6 +158,14 @@
       margin: 18px 0;
     }
 
+    .nav-shell {
+      margin: 18px 0;
+    }
+
+    .nav-shell .nav {
+      margin: 0;
+    }
+
     .nav a {
       border: 1px solid var(--cp-border-strong);
       border-radius: 999px;
@@ -193,6 +201,19 @@
       margin-right: 8px;
       background: var(--cp-warning);
       transform: rotate(45deg);
+    }
+
+    .mobile-menu-button {
+      display: none;
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--cp-border-strong);
+      border-radius: 999px;
+      background: var(--cp-surface);
+      color: var(--cp-text);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
     }
 
     html[data-mode="reader"] body {
@@ -312,16 +333,42 @@
       .section {
         padding: 24px;
       }
+
+      .mobile-menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-shell .nav {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .nav-shell .nav.open {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .nav-shell .nav a,
+      .nav-shell .tone-toggle {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 0;
+      }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <nav class="nav" aria-label="Site navigation">
-      <a href="/">Home</a>
-      <a href="/blog/">Short Blogs</a>
-      <button class="tone-toggle" type="button" id="modeToggle" aria-pressed="false">Reader Mode</button>
-    </nav>
+    <div class="nav-shell">
+      <button class="mobile-menu-button" type="button" id="menuButton" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav class="nav" id="siteNav" aria-label="Site navigation">
+        <a href="/">Home</a>
+        <a href="/blog/">Short Blogs</a>
+        <button class="tone-toggle" type="button" id="modeToggle" aria-pressed="false">Reader Mode</button>
+      </nav>
+    </div>
     {{ content }}
     <footer class="footer panel">
       Jerome Short | AI Transformation | Field CTO Advisory | Cloud Modernization
@@ -341,6 +388,28 @@
       setMode(false);
       button.addEventListener("click", () => {
         setMode(document.documentElement.getAttribute("data-mode") !== "reader");
+      });
+    })();
+
+    (() => {
+      const button = document.getElementById("menuButton");
+      const menu = document.getElementById("siteNav");
+      if (!button || !menu) return;
+
+      button.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("open");
+        button.setAttribute("aria-expanded", String(isOpen));
+        button.textContent = isOpen ? "Close menu" : "Menu";
+      });
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.matchMedia("(max-width: 720px)").matches) {
+            menu.classList.remove("open");
+            button.setAttribute("aria-expanded", "false");
+            button.textContent = "Menu";
+          }
+        });
       });
     })();
   </script>
