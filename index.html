@@ -250,16 +250,6 @@
       filter: grayscale(1);
     }
 
-    .headshot::before {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 1px solid var(--cp-border);
-      border-radius: 16px;
-      transform: skewX(-8deg);
-      z-index: 1;
-    }
-
     .quick-facts {
       display: grid;
       gap: 10px;
@@ -377,7 +367,6 @@
     }
 
     html[data-mode="reader"] .intro::before,
-    html[data-mode="reader"] .headshot::before,
     html[data-mode="reader"] .video-placeholder::before {
       display: none;
     }
