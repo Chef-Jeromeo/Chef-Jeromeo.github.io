@@ -24,6 +24,22 @@ permalink: /changelog/
 
   <h2>2026-07-15</h2>
 
+  <h3>Added blog post about the fun of creating on the web with Scout</h3>
+  <p><strong>Source:</strong> Microsoft Teams relay</p>
+  <p><strong>Exact request:</strong></p>
+  <blockquote>
+    Can you proof this, offer any suggestions and then post this to the blog “The most fun I’ve had creating on the web in 20 years!
+
+    Imagine having your own web developer on call 24/7 that is always awake, always creative, always got great suggestions, and is ready to put your ideas up on the web in minutes. Also it codes better and faster than you ever did and never complains if you want to change something. Want it to build several different examples and put them online for you to test out? No problem. Want it to keep perfect logs of what you asked for and all the changes it made? Already done. Maybe you have an idea for a blog post but you don’t know how to finish it or have time to gather all the facts. Don’t worry, it’s got you covered. You don’t even have to talk to it, just send a text message and it will do the rest.
+
+    That’s the fun I’ve been having the last couple of days. I just shoot a message like this to my Scout and it takes care of the rest. Seconds later I just proof the page.
+
+    It’s actually hard to stop.
+
+    I truly am having fun with this setup.”
+  </blockquote>
+  <p><strong>Change:</strong> Proofed and lightly polished the draft into a public blog post titled <strong>The most fun I've had creating on the web in 20 years</strong>, preserving the conversational tone while tightening grammar and flow.</p>
+
   <h3>Applied mobile Menu Button navigation and archived prior homepage</h3>
   <p><strong>Source:</strong> Microsoft Teams relay</p>
   <p><strong>Exact request:</strong></p>
