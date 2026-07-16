@@ -24,6 +24,14 @@ permalink: /changelog/
 
   <h2>2026-07-15</h2>
 
+  <h3>Replaced homepage video call-to-action with Short Blogs</h3>
+  <p><strong>Source:</strong> Microsoft Teams relay</p>
+  <p><strong>Exact request:</strong></p>
+  <blockquote>
+    On the home page for mobile devices can you replace the button for interview video with Short Blogs. Actually if it is also like that on the desktop version replace it there too. I don’t want to call attention to the video placeholder until I publish that
+  </blockquote>
+  <p><strong>Change:</strong> Updated the homepage hero call-to-action so the secondary button links to <strong>Short Blogs</strong> instead of the unpublished interview video placeholder.</p>
+
   <h3>Added OneDrive-saved iPhone screenshots to web-creation post</h3>
   <p><strong>Source:</strong> Microsoft Teams relay</p>
   <p><strong>Exact request:</strong></p>
