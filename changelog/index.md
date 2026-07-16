@@ -24,6 +24,14 @@ permalink: /changelog/
 
   <h2>2026-07-15</h2>
 
+  <h3>Added RSS feed support</h3>
+  <p><strong>Source:</strong> Microsoft Teams relay</p>
+  <p><strong>Exact request:</strong></p>
+  <blockquote>
+    Yes, please do that, make sure it will also be readable if they are visiting through the jeromeshort.com domain
+  </blockquote>
+  <p><strong>Change:</strong> Added a custom Jekyll-generated RSS feed at <code>/feed.xml</code>, updated the site URL to <code>https://jeromeshort.com</code>, and added RSS discovery/footer links so feed readers can subscribe using the custom domain.</p>
+
   <h3>Replaced homepage video call-to-action with Short Blogs</h3>
   <p><strong>Source:</strong> Microsoft Teams relay</p>
   <p><strong>Exact request:</strong></p>

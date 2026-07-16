@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="{{ '/feed.xml' | absolute_url }}">
   <script>
     (() => {
       const param = new URLSearchParams(window.location.search).get("scoutTheme");
@@ -371,7 +372,7 @@
     </div>
     {{ content }}
     <footer class="footer panel">
-      Jerome Short | AI Transformation | Field CTO Advisory | Cloud Modernization
+      Jerome Short | AI Transformation | Field CTO Advisory | Cloud Modernization | <a href="/feed.xml">RSS</a>
     </footer>
   </main>
   <script>

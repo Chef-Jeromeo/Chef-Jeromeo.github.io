@@ -1,6 +1,6 @@
 title: Short posts
 description: AI transformation, field CTO advisory, cloud modernization, and enterprise adoption notes from Jerome Short.
-url: "http://jeromeshort.com"
+url: "https://jeromeshort.com"
 baseurl: ""
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
