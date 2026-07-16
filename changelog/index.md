@@ -43,6 +43,14 @@ permalink: /changelog/
   </blockquote>
   <p><strong>Change:</strong> Fetched the RSVP page in smaller chunks, used the rendered page structure and local screenshots as reference, and added a static non-submitting RSVP-inspired clone under <code>/previews/wedding-rsvp-clone/</code>. The clone does not copy site graphics and does not submit data to the real RSVP site.</p>
 
+  <h3>Reduced screenshot display size in web-creation post</h3>
+  <p><strong>Source:</strong> Microsoft Teams relay</p>
+  <p><strong>Exact request:</strong></p>
+  <blockquote>
+    can you make the screen shots on the last blog post half the size they are now
+  </blockquote>
+  <p><strong>Change:</strong> Updated the two screenshots in <strong>The most fun I've had creating on the web in 20 years</strong> to render at 50% width while preserving responsive scaling.</p>
+
   <h3>Replaced homepage video call-to-action with Short Blogs</h3>
   <p><strong>Source:</strong> Microsoft Teams relay</p>
   <p><strong>Exact request:</strong></p>
