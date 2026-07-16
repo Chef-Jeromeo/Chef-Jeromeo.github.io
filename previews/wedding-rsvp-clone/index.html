@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding RSVP Clone Preview</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fbf7f0;
+      --ink: #22201d;
+      --muted: #766f66;
+      --line: #ded5c8;
+      --panel: #ffffff;
+      --sage: #8f9c89;
+      --sage-dark: #4f5d4b;
+      --gold: #bd8b45;
+      --blush: #efe2dc;
+      --shadow: rgba(34, 32, 29, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 10%, var(--blush), transparent 28rem),
+        radial-gradient(circle at 90% 0%, #eef1e8, transparent 24rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 24px 0 64px;
+    }
+
+    .demo-note {
+      margin: 0 0 16px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--gold);
+      border-radius: 12px;
+      background: var(--panel);
+      color: var(--muted);
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .shell {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: 0 22px 60px var(--shadow);
+    }
+
+    .hero {
+      min-height: 340px;
+      display: grid;
+      place-items: center;
+      padding: 52px 28px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(255,255,255,.72), rgba(255,255,255,.86)),
+        repeating-linear-gradient(135deg, transparent 0 14px, rgba(143,156,137,.16) 14px 15px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--sage-dark);
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.7rem, 10vw, 6rem);
+      line-height: .95;
+      font-weight: 400;
+    }
+
+    .date {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      font-size: 1rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 0;
+    }
+
+    .details {
+      padding: 34px;
+      background: #f8f4ed;
+      border-right: 1px solid var(--line);
+    }
+
+    .details h2,
+    .rsvp h2 {
+      margin: 0 0 12px;
+      font-size: 1.65rem;
+      font-weight: 400;
+    }
+
+    .details p {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .mini-card {
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--ink);
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      font-size: .84rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .rsvp {
+      padding: 34px;
+    }
+
+    .instructions {
+      margin: 0 0 22px;
+      color: var(--muted);
+    }
+
+    label {
+      display: block;
+      margin: 18px 0 8px;
+      color: var(--sage-dark);
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fffdf9;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea { min-height: 92px; resize: vertical; }
+
+    .radio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .radio-card {
+      position: relative;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fffdf9;
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      cursor: pointer;
+    }
+
+    .radio-card input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .radio-card:has(input:checked) {
+      border-color: var(--sage-dark);
+      background: #eef1e8;
+    }
+
+    .button {
+      width: 100%;
+      margin-top: 24px;
+      min-height: 52px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--sage-dark);
+      color: #fff;
+      cursor: pointer;
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      font-size: .92rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .button:hover { background: #3d4939; }
+
+    .result {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid var(--sage);
+      border-radius: 16px;
+      background: #eef1e8;
+      color: var(--sage-dark);
+      font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+    }
+
+    .result.show { display: block; }
+
+    @media (max-width: 760px) {
+      .content { grid-template-columns: 1fr; }
+      .details { border-right: 0; border-bottom: 1px solid var(--line); }
+      .details, .rsvp { padding: 24px; }
+      .radio-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="demo-note">
+      Demo clone: inspired by the RSVP flow and screenshots, not connected to the real wedding site and not submitting data anywhere.
+    </p>
+
+    <section class="shell">
+      <header class="hero">
+        <div>
+          <p class="kicker">Wedding celebration</p>
+          <h1>Bhavana &amp; Bodhi</h1>
+          <p class="date">December 2026 · RSVP preview</p>
+        </div>
+      </header>
+
+      <div class="content">
+        <aside class="details">
+          <h2>Celebrate with us</h2>
+          <p>
+            A soft, elegant RSVP experience with a simple guest lookup flow, group response framing, and space for attendance details.
+          </p>
+          <div class="mini-card">
+            <strong>What this demonstrates</strong>
+            A static RSVP-style microsite that could be generated, edited, and published through Teams → Scout → GitHub Pages.
+          </div>
+          <div class="mini-card">
+            <strong>Safety note</strong>
+            This preview uses local-only JavaScript. The form does not send data to The Knot or any external RSVP service.
+          </div>
+        </aside>
+
+        <section class="rsvp">
+          <p class="kicker">RSVP</p>
+          <h2>Find your invitation</h2>
+          <p class="instructions">
+            If you are responding for yourself and a guest, or for your family, you would be able to RSVP for your entire group.
+          </p>
+
+          <form id="rsvpForm">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" autocomplete="name" placeholder="Jerome Short" required>
+
+            <label>Will you attend?</label>
+            <div class="radio-grid">
+              <label class="radio-card"><input type="radio" name="attending" value="Yes" required>Joyfully accepts</label>
+              <label class="radio-card"><input type="radio" name="attending" value="No">Regretfully declines</label>
+            </div>
+
+            <label for="partySize">Party size</label>
+            <select id="partySize" name="partySize">
+              <option>Just me</option>
+              <option>Me and one guest</option>
+              <option>Family / group</option>
+            </select>
+
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" placeholder="Meal preferences, accessibility needs, or a short note."></textarea>
+
+            <button class="button" type="submit">Preview RSVP</button>
+          </form>
+
+          <div class="result" id="result" role="status"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("rsvpForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = data.get("fullName") || "Guest";
+      const attending = data.get("attending") || "No response";
+      const party = data.get("partySize") || "Party not selected";
+      result.textContent = `${name}: ${attending}. Party: ${party}. This is only a local preview; no RSVP was submitted.`;
+      result.classList.add("show");
+    });
+  </script>
+</body>
+</html>

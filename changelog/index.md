@@ -32,6 +32,17 @@ permalink: /changelog/
   </blockquote>
   <p><strong>Change:</strong> Added a custom Jekyll-generated RSS feed at <code>/feed.xml</code>, updated the site URL to <code>https://jeromeshort.com</code>, and added RSS discovery/footer links so feed readers can subscribe using the custom domain.</p>
 
+  <h3>Started RSVP page chunking and created static RSVP clone preview</h3>
+  <p><strong>Source:</strong> Microsoft Teams relay</p>
+  <p><strong>Exact requests:</strong></p>
+  <blockquote>
+    Good morning I want to explore an idea and maybe clone a website do you see the two most recent screenshots I uploaded? IMG_4100 and IMG_4101 in there my brother sent me his wedding registration site. You can also see it here -> https://www.bhavanabodhi.com/rsvp I want you to take a look and then make a clone in a subdirectory in my site. I’m curios to see what you come up with. Don’t worry about using the graphics from this site or submitting data to the rsvp site, just don’t do a lot. You can test it out with my name and what seems like the correct answers. Let me know if you have any questions
+  </blockquote>
+  <blockquote>
+    Can you chunk it out into smaller requests
+  </blockquote>
+  <p><strong>Change:</strong> Fetched the RSVP page in smaller chunks, used the rendered page structure and local screenshots as reference, and added a static non-submitting RSVP-inspired clone under <code>/previews/wedding-rsvp-clone/</code>. The clone does not copy site graphics and does not submit data to the real RSVP site.</p>
+
   <h3>Replaced homepage video call-to-action with Short Blogs</h3>
   <p><strong>Source:</strong> Microsoft Teams relay</p>
   <p><strong>Exact request:</strong></p>
