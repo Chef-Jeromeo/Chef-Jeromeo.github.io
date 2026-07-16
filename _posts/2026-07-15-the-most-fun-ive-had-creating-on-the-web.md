@@ -16,3 +16,9 @@ That is the fun I have been having over the last couple of days. I send a messag
 It is actually hard to stop.
 
 I truly am having fun with this setup.
+
+P.S. I updated this post to include the screenshots below, which I saved to my OneDrive from my phone to show how this is done. The update itself was also requested through a Teams message, which feels like the point: the phone, Teams, OneDrive, Scout, Git, and GitHub Pages all become part of one lightweight publishing flow.
+
+![A Teams message from mobile asking Scout to proof and publish the blog post](/assets/creating-on-the-web/teams-scout-iphone-4098.png)
+
+![Scout replying in Teams after polishing and publishing the post](/assets/creating-on-the-web/teams-scout-iphone-4099.png)

@@ -24,6 +24,14 @@ permalink: /changelog/
 
   <h2>2026-07-15</h2>
 
+  <h3>Added OneDrive-saved iPhone screenshots to web-creation post</h3>
+  <p><strong>Source:</strong> Microsoft Teams relay</p>
+  <p><strong>Exact request:</strong></p>
+  <blockquote>
+    To that last post can you add the screenshots from my one drive IMG_4098 and IMG_4099 in a post script section that says I updated the post to include these images I saved to my OneDrive to show how it’s done. Also through a Teams message.
+  </blockquote>
+  <p><strong>Change:</strong> Copied <code>IMG_4098.PNG</code> and <code>IMG_4099.PNG</code> from the OneDrive asset intake folder into the site assets and added them to a postscript section in <strong>The most fun I've had creating on the web in 20 years</strong>.</p>
+
   <h3>Added blog post about the fun of creating on the web with Scout</h3>
   <p><strong>Source:</strong> Microsoft Teams relay</p>
   <p><strong>Exact request:</strong></p>
